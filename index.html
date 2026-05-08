@@ -1,0 +1,1412 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unalôme · Carole Tiozzo — Soins holistiques à Toulouse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --cream: #faf7f2;
+        --warm: #f3ece0;
+        --sand: #e5d8c2;
+        --tan: #c9aa7c;
+        --gold: #b8923a;
+        --gold2: #d4a84b;
+        --brown-l: #9b7240;
+        --brown: #6b4e2a;
+        --deep: #3e2c18;
+        --text: #46341f;
+        --muted: #9c836a;
+        --white: #fffefb;
+        --nav-bg: rgba(250, 247, 242, 0.93);
+        --nav-border: var(--sand);
+      }
+
+      body.dark-mode {
+        --cream: #121212;
+        --warm: #1a1a1a;
+        --sand: #2b2b2b;
+        --tan: #b79461;
+        --gold: #d4a84b;
+        --gold2: #e0b85e;
+        --brown-l: #c49a66;
+        --brown: #d0a775;
+        --deep: #f1dfc4;
+        --text: #e9dcc8;
+        --muted: #bca98d;
+        --white: #1f1f1f;
+        --nav-bg: rgba(18, 18, 18, 0.93);
+        --nav-border: #2b2b2b;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+        background: var(--cream);
+        color: var(--text);
+        font-size: 16px;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ─── NAV ─── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: var(--nav-bg);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--nav-border);
+        padding: 0.95rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-brand {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+        text-decoration: none;
+      }
+
+      .nav-logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 400;
+        font-size: 1.35rem;
+        letter-spacing: 0.1em;
+        background: linear-gradient(
+          115deg,
+          var(--brown) 0%,
+          var(--gold2) 55%,
+          var(--brown-l) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .nav-sub {
+        font-size: 0.58rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--tan);
+        margin-top: 1px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.4rem;
+        list-style: none;
+        align-items: center;
+      }
+
+      .nav-links a {
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+
+      .dark-toggle {
+        border: 1px solid var(--sand);
+        background: transparent;
+        color: var(--muted);
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .dark-toggle:hover {
+        color: var(--gold);
+        border-color: var(--gold);
+      }
+
+      /* ─── HERO ─── */
+      .hero {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 7rem 2rem 5rem;
+        position: relative;
+        overflow: hidden;
+        background: var(--cream);
+      }
+
+      /* cercles décoratifs dorés */
+      .hero-bg-ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid var(--sand);
+        pointer-events: none;
+      }
+
+      .ring1 {
+        width: 320px;
+        height: 320px;
+        top: -80px;
+        right: -100px;
+        opacity: 0.6;
+      }
+      .ring2 {
+        width: 200px;
+        height: 200px;
+        bottom: 40px;
+        left: -60px;
+        opacity: 0.4;
+        border-color: var(--tan);
+      }
+      .ring3 {
+        width: 120px;
+        height: 120px;
+        top: 140px;
+        left: 30px;
+        opacity: 0.3;
+      }
+
+      .hero-symbol {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 1.75rem;
+      }
+
+      .hero-symbol svg {
+        width: 54px;
+        height: 54px;
+        filter: drop-shadow(0 2px 8px rgba(184, 146, 58, 0.25));
+      }
+
+      .hero-eyebrow {
+        position: relative;
+        z-index: 1;
+        font-size: 0.65rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--tan);
+        margin-bottom: 1.25rem;
+      }
+
+      .hero h1 {
+        position: relative;
+        z-index: 1;
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 300;
+        font-size: clamp(3.2rem, 12vw, 5.5rem);
+        line-height: 1;
+        letter-spacing: 0.04em;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(
+          135deg,
+          var(--brown) 0%,
+          var(--gold2) 50%,
+          var(--brown-l) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-tagline {
+        position: relative;
+        z-index: 1;
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 1.05rem;
+        color: var(--muted);
+        margin-bottom: 0.6rem;
+        letter-spacing: 0.03em;
+      }
+
+      .hero-location {
+        position: relative;
+        z-index: 1;
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--tan);
+        margin-bottom: 2.5rem;
+      }
+
+      .hero-location::before,
+      .hero-location::after {
+        content: '·';
+        margin: 0 0.6em;
+        opacity: 0.5;
+      }
+
+      .btn-gold {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        padding: 0.9rem 2.4rem;
+        background: linear-gradient(115deg, var(--brown) 0%, var(--gold2) 100%);
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        border-radius: 40px;
+        transition:
+          opacity 0.2s,
+          transform 0.2s;
+        box-shadow: 0 4px 20px rgba(184, 146, 58, 0.3);
+      }
+
+      .btn-gold:hover {
+        opacity: 0.88;
+        transform: translateY(-2px);
+      }
+
+      /* ─── SEPARATEUR ─── */
+      .sep {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0 1.5rem;
+        margin: 0.5rem 0;
+      }
+      .sep-line {
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          var(--sand),
+          transparent
+        );
+      }
+      .sep-symbol {
+        color: var(--tan);
+        font-size: 1rem;
+        opacity: 0.7;
+      }
+
+      /* ─── SECTIONS GÉNÉRALES ─── */
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      .section-label {
+        display: block;
+        font-size: 0.62rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--tan);
+        margin-bottom: 0.6rem;
+      }
+
+      .section-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 300;
+        font-size: 2.1rem;
+        line-height: 1.15;
+        color: var(--deep);
+        margin-bottom: 1.25rem;
+      }
+
+      .section-title em {
+        font-style: italic;
+        background: linear-gradient(115deg, var(--brown) 0%, var(--gold2) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* ─── À PROPOS ─── */
+      .about-card {
+        background: var(--white);
+        border: 1px solid var(--sand);
+        border-radius: 20px;
+        padding: 2.25rem 1.75rem;
+      }
+
+      .about-accent {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .about-badge {
+        padding: 0.3rem 1rem;
+        background: linear-gradient(115deg, var(--brown), var(--gold2));
+        border-radius: 20px;
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--white);
+      }
+
+      .about-card p {
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.85;
+      }
+
+      .about-card p + p {
+        margin-top: 0.9rem;
+      }
+
+      .about-divider {
+        width: 28px;
+        height: 1px;
+        background: linear-gradient(to right, var(--brown), var(--gold2));
+        margin: 1.5rem 0;
+      }
+
+      .about-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.25rem;
+      }
+
+      .tag {
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.3rem 0.85rem;
+        border: 1px solid var(--sand);
+        border-radius: 20px;
+        color: var(--muted);
+      }
+
+      /* ─── SERVICES ─── */
+      .services-bg {
+        background: var(--warm);
+      }
+
+      .service-group {
+        margin-top: 2.25rem;
+      }
+
+      .service-group + .service-group {
+        margin-top: 2rem;
+      }
+
+      .group-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: var(--deep);
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--sand);
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .group-title::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 1px;
+        background: linear-gradient(to right, var(--brown), var(--gold2));
+        flex-shrink: 0;
+      }
+
+      .service-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .service-card {
+        background: var(--white);
+        border-radius: 14px;
+        padding: 1.15rem 1.25rem;
+        border: 1px solid transparent;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .service-card:hover {
+        border-color: var(--sand);
+        box-shadow: 0 4px 16px rgba(184, 146, 58, 0.08);
+      }
+
+      .service-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+      }
+
+      .service-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.05rem;
+        color: var(--deep);
+        font-weight: 400;
+      }
+
+      .service-price {
+        font-size: 0.8rem;
+        color: var(--gold);
+        white-space: nowrap;
+        font-weight: 400;
+      }
+
+      .service-duration {
+        font-size: 0.72rem;
+        color: var(--tan);
+        letter-spacing: 0.06em;
+        margin-top: 0.15rem;
+      }
+
+      /* ─── TARIFS ─── */
+      .pricing-wrap {
+        background: var(--white);
+        border: 1px solid var(--sand);
+        border-radius: 20px;
+        padding: 2rem 1.5rem;
+      }
+
+      .pricing-list {
+        list-style: none;
+        margin-top: 1.5rem;
+      }
+
+      .pricing-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: 0.85rem 0;
+        border-bottom: 1px solid var(--warm);
+        gap: 1rem;
+      }
+
+      .pricing-item:last-child {
+        border-bottom: none;
+      }
+
+      .pricing-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1rem;
+        color: var(--deep);
+      }
+
+      .pricing-detail {
+        font-size: 0.72rem;
+        color: var(--tan);
+        display: block;
+        letter-spacing: 0.04em;
+      }
+
+      .pricing-price {
+        font-size: 0.85rem;
+        color: var(--gold);
+        white-space: nowrap;
+      }
+
+      /* ─── CARTE DE VISITE ─── */
+      .card-section {
+        background: var(--cream);
+      }
+
+      .biz-card-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .biz-card {
+        width: 100%;
+        max-width: 340px;
+        aspect-ratio: 85.6 / 54;
+        border-radius: 14px;
+        padding: 1.4rem 1.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 36px rgba(61, 40, 20, 0.18);
+      }
+
+      /* Recto */
+      .biz-card.recto {
+        background: linear-gradient(
+          145deg,
+          var(--deep) 0%,
+          #5c3a1a 60%,
+          var(--brown) 100%
+        );
+      }
+
+      .biz-card.recto::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: 1px solid rgba(212, 168, 75, 0.18);
+      }
+
+      .biz-card.recto::after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 60px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 1px solid rgba(212, 168, 75, 0.1);
+      }
+
+      .card-brand {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 400;
+        font-size: 1.55rem;
+        letter-spacing: 0.1em;
+        background: linear-gradient(
+          115deg,
+          #f5e6c8 0%,
+          var(--gold2) 60%,
+          #c9946a 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+      }
+
+      .card-logo-sub {
+        font-size: 0.58rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(212, 168, 75, 0.65);
+        margin-top: 3px;
+      }
+
+      .card-name-block {
+        text-align: right;
+      }
+
+      .card-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1rem;
+        font-weight: 300;
+        color: rgba(245, 230, 200, 0.9);
+        display: block;
+        line-height: 1.2;
+      }
+
+      .card-title-line {
+        font-size: 0.58rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(212, 168, 75, 0.55);
+        margin-top: 2px;
+      }
+
+      .card-contact {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.22rem;
+      }
+
+      .card-contact li {
+        font-size: 0.65rem;
+        color: rgba(245, 230, 200, 0.6);
+        letter-spacing: 0.04em;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .card-contact li::before {
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 1px;
+        background: linear-gradient(to right, var(--gold2), transparent);
+        flex-shrink: 0;
+      }
+
+      /* Verso */
+      .biz-card.verso {
+        background: var(--warm);
+        border: 1px solid var(--sand);
+        box-shadow: 0 6px 20px rgba(107, 78, 42, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 1.5rem;
+      }
+
+      .verso-symbol svg {
+        width: 28px;
+        height: 28px;
+        opacity: 0.6;
+      }
+
+      .verso-quote {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 0.95rem;
+        color: var(--brown);
+        line-height: 1.5;
+        letter-spacing: 0.03em;
+      }
+
+      .verso-url {
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--tan);
+      }
+
+      .card-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--tan);
+        text-align: center;
+      }
+
+      .card-specs {
+        margin-top: 1.25rem;
+        background: var(--white);
+        border: 1px solid var(--sand);
+        border-radius: 14px;
+        padding: 1.25rem 1.5rem;
+        width: 100%;
+        max-width: 340px;
+      }
+
+      .card-specs p {
+        font-size: 0.75rem;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .spec-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.3rem 0;
+        border-bottom: 1px solid var(--warm);
+      }
+
+      .spec-row:last-child {
+        border: none;
+      }
+
+      .spec-key {
+        font-size: 0.68rem;
+        color: var(--tan);
+        letter-spacing: 0.08em;
+      }
+
+      .spec-val {
+        font-size: 0.68rem;
+        color: var(--text);
+        font-weight: 400;
+        text-align: right;
+      }
+
+      /* ─── CONTACT ─── */
+      .contact-section {
+        background: linear-gradient(160deg, var(--deep) 0%, #4f3420 100%);
+        color: var(--white);
+        text-align: center;
+        padding: 4.5rem 1.5rem 5.5rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-section::before {
+        content: '';
+        position: absolute;
+        top: -80px;
+        right: -80px;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        border: 1px solid rgba(212, 168, 75, 0.12);
+      }
+
+      .contact-section .section-label {
+        color: var(--tan);
+      }
+      .contact-section .section-title {
+        color: #f5e8d0;
+      }
+      .contact-section .section-title em {
+        background: linear-gradient(115deg, var(--gold2), #e8c96a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .contact-sub {
+        font-size: 0.85rem;
+        color: rgba(245, 232, 208, 0.55);
+        margin-bottom: 2.25rem;
+        line-height: 1.7;
+      }
+
+      .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.9rem 1.8rem;
+        border: 1px solid rgba(212, 168, 75, 0.25);
+        border-radius: 40px;
+        color: rgba(245, 232, 208, 0.85);
+        text-decoration: none;
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+        transition:
+          border-color 0.2s,
+          background 0.2s;
+        width: 100%;
+        max-width: 290px;
+        justify-content: center;
+      }
+
+      .contact-link:hover {
+        border-color: var(--gold2);
+        background: rgba(212, 168, 75, 0.07);
+      }
+
+      .contact-exp {
+        margin-top: 2.5rem;
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: rgba(212, 168, 75, 0.5);
+        letter-spacing: 0.06em;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ─── FOOTER ─── */
+      footer {
+        background: var(--deep);
+        border-top: 1px solid rgba(212, 168, 75, 0.1);
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      footer p {
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+        color: rgba(212, 168, 75, 0.3);
+      }
+
+      /* ─── ANIMATIONS ─── */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ─── DESKTOP ─── */
+      @media (min-width: 640px) {
+        section {
+          padding: 5rem 2.5rem;
+        }
+        .service-cards {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <a href="#" class="nav-brand">
+        <span class="nav-logo">Unalôme</span>
+        <span class="nav-sub">Toulouse</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#soins">Soins</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="dark-toggle" class="dark-toggle">dark</button></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg-ring ring1"></div>
+      <div class="hero-bg-ring ring2"></div>
+      <div class="hero-bg-ring ring3"></div>
+
+      <div class="hero-symbol">
+        <!-- Symbole Unalôme SVG -->
+        <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#6b4e2a" />
+              <stop offset="50%" stop-color="#d4a84b" />
+              <stop offset="100%" stop-color="#9b7240" />
+            </linearGradient>
+          </defs>
+          <!-- spirale base -->
+          <circle
+            cx="30"
+            cy="52"
+            r="10"
+            stroke="url(#gGold)"
+            stroke-width="1.4"
+            fill="none"
+          />
+          <circle
+            cx="30"
+            cy="52"
+            r="5"
+            stroke="url(#gGold)"
+            stroke-width="1.2"
+            fill="none"
+          />
+          <circle cx="30" cy="52" r="2" fill="url(#gGold)" />
+          <!-- tige -->
+          <path
+            d="M30 42 Q28 30 30 18 Q32 10 30 4"
+            stroke="url(#gGold)"
+            stroke-width="1.4"
+            fill="none"
+            stroke-linecap="round"
+          />
+          <!-- ondulations -->
+          <path
+            d="M30 30 Q35 26 30 22 Q25 18 30 14"
+            stroke="url(#gGold)"
+            stroke-width="1.2"
+            fill="none"
+            stroke-linecap="round"
+          />
+          <!-- point supérieur -->
+          <circle cx="30" cy="4" r="2" fill="url(#gGold)" />
+        </svg>
+      </div>
+
+      <p class="hero-eyebrow">Soins holistiques &amp; bien-être</p>
+      <h1>Unalôme</h1>
+      <p class="hero-tagline">
+        L'art de prendre soin, de l'intérieur comme de l'extérieur
+      </p>
+      <p class="hero-location">Toulouse &amp; à domicile</p>
+      <a href="#contact" class="btn-gold">Prendre rendez-vous</a>
+    </section>
+
+    <div class="sep">
+      <span class="sep-line"></span><span class="sep-symbol">✦</span
+      ><span class="sep-line"></span>
+    </div>
+
+    <!-- À PROPOS -->
+    <section id="apropos" style="padding: 3rem 1.5rem">
+      <div class="about-card fade-in">
+        <div class="about-accent">
+          <span class="section-label" style="margin: 0">À propos</span>
+          <span class="about-badge">25 ans d'expérience</span>
+        </div>
+        <h2 class="section-title">Carole <em>Tiozzo</em></h2>
+        <p>
+          Praticienne en soins holistiques depuis 25 ans, je vous accueille dans
+          mon cabinet à Toulouse ou me déplace à votre domicile pour des séances
+          qui allient profondeur, douceur et authenticité.
+        </p>
+        <p>
+          Mon approche conjugue des techniques issues de la médecine
+          traditionnelle chinoise, de la réflexologie et des soins visage
+          d'exception, pour un bien-être global du corps et de l'esprit.
+        </p>
+        <div class="about-divider"></div>
+        <div class="about-tags">
+          <span class="tag">Réflexologie</span>
+          <span class="tag">Massage Tui Na</span>
+          <span class="tag">Microneedling</span>
+          <span class="tag">Kobido</span>
+          <span class="tag">Shiatsu visage</span>
+          <span class="tag">Cabinet &amp; domicile</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="soins" class="services-bg">
+      <span class="section-label">Prestations</span>
+      <h2 class="section-title">Les <em>soins</em></h2>
+
+      <!-- Réflexologie -->
+      <div class="service-group fade-in">
+        <h3 class="group-title">Réflexologie plantaire</h3>
+        <div class="service-cards">
+          <div class="service-card">
+            <div class="service-row">
+              <span class="service-name">Soin global</span>
+              <span class="service-price">50 €</span>
+            </div>
+            <p class="service-duration">30 min</p>
+          </div>
+          <div class="service-card">
+            <div class="service-row">
+              <span class="service-name">Soin global</span>
+              <span class="service-price">90 €</span>
+            </div>
+            <p class="service-duration">1h</p>
+          </div>
+          <div class="service-card">
+            <div class="service-row">
+              <span class="service-name">Soin complet</span>
+              <span class="service-price">130 €</span>
+            </div>
+            <p class="service-duration">1h30</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tui Na -->
+      <div class="service-group fade-in">
+        <h3 class="group-title">Massage Tui Na</h3>
+        <div class="service-cards">
+          <div class="service-card">
+            <div class="service-row">
+              <span class="service-name">Soin</span>
+              <span class="service-price">80 €</span>
+            </div>
+            <p class="service-duration">1h</p>
+          </div>
+          <div class="service-card">
+            <div class="service-row">
+              <span class="service-name">Soin</span>
+              <span class="service-price">100 €</span>
+            </div>
+            <p class="service-duration">1h30</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soins visage -->
+      <div class="service-group fade-in">
+        <h3 class="group-title">Soins visage &amp; détente</h3>
+        <div class="service-cards">
+          <div class="service-card">
+            <div class="service-row">
+              <span class="service-name">Shiatsu visage</span>
+              <span class="service-price">50 €</span>
+            </div>
+            <p class="service-duration">Soin détente · visage</p>
+          </div>
+          <div class="service-card">
+            <div class="service-row">
+              <span class="service-name">Massage Kobido</span>
+              <span class="service-price">60 €</span>
+            </div>
+            <p class="service-duration">Lifting naturel du visage</p>
+          </div>
+          <div class="service-card">
+            <div class="service-row">
+              <span class="service-name"
+                >Détente visage, nuque &amp; épaules</span
+              >
+              <span class="service-price">70 €</span>
+            </div>
+            <p class="service-duration">Relâchement profond des tensions</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Microneedling -->
+      <div class="service-group fade-in">
+        <h3 class="group-title">Soin avancé</h3>
+        <div class="service-cards">
+          <div class="service-card">
+            <div class="service-row">
+              <span class="service-name">Microneedling au GHK-Cu</span>
+              <span class="service-price">100 €</span>
+            </div>
+            <p class="service-duration">
+              Par séance · Raffermissement &amp; régénération
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep">
+      <span class="sep-line"></span><span class="sep-symbol">✦</span
+      ><span class="sep-line"></span>
+    </div>
+
+    <!-- TARIFS RÉCAP -->
+    <section id="tarifs" style="padding: 3rem 1.5rem">
+      <div class="pricing-wrap fade-in">
+        <span class="section-label">Tarifs</span>
+        <h2 class="section-title">Grille <em>tarifaire</em></h2>
+        <ul class="pricing-list">
+          <li class="pricing-item">
+            <div>
+              <span class="pricing-name">Réflexologie plantaire</span>
+              <span class="pricing-detail">30 min</span>
+            </div>
+            <span class="pricing-price">50 €</span>
+          </li>
+          <li class="pricing-item">
+            <div>
+              <span class="pricing-name">Réflexologie plantaire</span>
+              <span class="pricing-detail">1h</span>
+            </div>
+            <span class="pricing-price">90 €</span>
+          </li>
+          <li class="pricing-item">
+            <div>
+              <span class="pricing-name">Réflexologie plantaire</span>
+              <span class="pricing-detail">1h30</span>
+            </div>
+            <span class="pricing-price">130 €</span>
+          </li>
+          <li class="pricing-item">
+            <div>
+              <span class="pricing-name">Massage Tui Na</span>
+              <span class="pricing-detail">1h</span>
+            </div>
+            <span class="pricing-price">80 €</span>
+          </li>
+          <li class="pricing-item">
+            <div>
+              <span class="pricing-name">Massage Tui Na</span>
+              <span class="pricing-detail">1h30</span>
+            </div>
+            <span class="pricing-price">100 €</span>
+          </li>
+          <li class="pricing-item">
+            <div>
+              <span class="pricing-name">Shiatsu visage</span>
+              <span class="pricing-detail">Soin détente</span>
+            </div>
+            <span class="pricing-price">50 €</span>
+          </li>
+          <li class="pricing-item">
+            <div>
+              <span class="pricing-name">Massage Kobido</span>
+              <span class="pricing-detail">Lifting naturel</span>
+            </div>
+            <span class="pricing-price">60 €</span>
+          </li>
+          <li class="pricing-item">
+            <div>
+              <span class="pricing-name"
+                >Détente visage, nuque &amp; épaules</span
+              >
+              <span class="pricing-detail">Relaxation profonde</span>
+            </div>
+            <span class="pricing-price">70 €</span>
+          </li>
+          <li class="pricing-item">
+            <div>
+              <span class="pricing-name">Microneedling GHK-Cu</span>
+              <span class="pricing-detail">Par séance</span>
+            </div>
+            <span class="pricing-price">100 €</span>
+          </li>
+        </ul>
+        <p
+          style="
+            font-size: 0.72rem;
+            color: var(--tan);
+            margin-top: 1.25rem;
+            line-height: 1.7;
+          "
+        >
+          Déplacements à domicile disponibles sur Toulouse et les environs.
+          Contactez-moi pour un devis personnalisé.
+        </p>
+      </div>
+    </section>
+
+    <!-- CARTE DE VISITE -->
+    <section class="card-section" id="carte">
+      <span class="section-label">Carte de visite</span>
+      <h2 class="section-title"><em>À imprimer</em></h2>
+      <p
+        style="
+          font-size: 0.82rem;
+          color: var(--muted);
+          margin-top: 0.25rem;
+          line-height: 1.75;
+        "
+      >
+        Format standard 85,6 × 54 mm
+      </p>
+
+      <div class="biz-card-wrap">
+        <span class="card-label">Recto</span>
+        <div class="biz-card recto">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+            "
+          >
+            <div class="card-brand">
+              <span class="card-logo">Unalôme</span>
+              <span class="card-logo-sub">Soins holistiques</span>
+            </div>
+            <div class="card-name-block">
+              <span class="card-name">Carole Tiozzo</span>
+              <span class="card-title-line">Praticienne</span>
+            </div>
+          </div>
+          <ul class="card-contact">
+            <li>06 XX XX XX XX</li>
+            <li>carole@unalome-toulouse.fr</li>
+            <li>Toulouse &amp; à domicile</li>
+            <li>@unalome.toulouse</li>
+          </ul>
+        </div>
+
+        <span class="card-label">Verso</span>
+        <div class="biz-card verso">
+          <div class="verso-symbol">
+            <svg viewBox="0 0 60 80" fill="none">
+              <defs>
+                <linearGradient id="gGold2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#6b4e2a" />
+                  <stop offset="50%" stop-color="#d4a84b" />
+                  <stop offset="100%" stop-color="#9b7240" />
+                </linearGradient>
+              </defs>
+              <circle
+                cx="30"
+                cy="52"
+                r="10"
+                stroke="url(#gGold2)"
+                stroke-width="1.4"
+                fill="none"
+              />
+              <circle
+                cx="30"
+                cy="52"
+                r="5"
+                stroke="url(#gGold2)"
+                stroke-width="1.2"
+                fill="none"
+              />
+              <circle cx="30" cy="52" r="2" fill="url(#gGold2)" />
+              <path
+                d="M30 42 Q28 30 30 18 Q32 10 30 4"
+                stroke="url(#gGold2)"
+                stroke-width="1.4"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <path
+                d="M30 30 Q35 26 30 22 Q25 18 30 14"
+                stroke="url(#gGold2)"
+                stroke-width="1.2"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <circle cx="30" cy="4" r="2" fill="url(#gGold2)" />
+            </svg>
+          </div>
+          <p class="verso-quote">« Vers l'équilibre, pas à pas »</p>
+          <p class="verso-url">unalome-toulouse.fr</p>
+        </div>
+
+        <!-- Spécifications techniques -->
+        <div class="card-specs">
+          <div class="spec-row">
+            <span class="spec-key">Format</span
+            ><span class="spec-val">85,6 × 54 mm</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Police principale</span
+            ><span class="spec-val">Cormorant Garamond 400</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Police corps</span
+            ><span class="spec-val">Raleway 300</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Fond recto</span
+            ><span class="spec-val">#3e2c18 → #6b4e2a</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Fond verso</span
+            ><span class="spec-val">#f3ece0</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Doré principal</span
+            ><span class="spec-val">#d4a84b</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Marron profond</span
+            ><span class="spec-val">#3e2c18</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-key">Marges</span
+            ><span class="spec-val">3 mm minimum</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title">Réserver<br />une <em>séance</em></h2>
+      <p class="contact-sub">
+        Au cabinet à Toulouse ou à votre domicile.<br />Je vous réponds dans les
+        24h.
+      </p>
+      <div class="contact-links">
+        <a href="tel:06XXXXXXXX" class="contact-link">
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.79 9.1a19.79 19.79 0 01-3.07-8.67A2 2 0 012.6 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 9.91a16 16 0 006.17 6.18l.97-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+            />
+          </svg>
+          06 XX XX XX XX
+        </a>
+        <a href="mailto:carole@unalome-toulouse.fr" class="contact-link">
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          carole@unalome-toulouse.fr
+        </a>
+        <a
+          href="https://www.instagram.com/carole_tiozzo/"
+          target="_blank"
+          class="contact-link"
+        >
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+          </svg>
+          @unalome.toulouse
+        </a>
+      </div>
+      <p class="contact-exp">25 ans d'expérience · Toulouse</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2025 Unalôme · Carole Tiozzo · Soins holistiques à Toulouse</p>
+    </footer>
+
+    <script>
+      const darkToggle = document.getElementById('dark-toggle');
+      const setDarkMode = (enabled) => {
+        document.body.classList.toggle('dark-mode', enabled);
+        localStorage.setItem('theme', enabled ? 'dark' : 'light');
+      };
+
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        setDarkMode(true);
+      }
+
+      if (darkToggle) {
+        darkToggle.addEventListener('click', () => {
+          const isDark = document.body.classList.contains('dark-mode');
+          setDarkMode(!isDark);
+        });
+      }
+
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add('visible');
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll('.fade-in').forEach((el) => obs.observe(el));
+    </script>
+  </body>
+</html>

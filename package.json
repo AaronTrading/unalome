@@ -1,0 +1,9 @@
+{
+  "name": "unalome",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local project setup for deployment",
+  "scripts": {
+    "start": "node -e \"console.log('Project is ready')\""
+  }
+}
